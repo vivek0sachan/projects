@@ -1,17 +1,11 @@
-// // Import required modules
-// const http = require('http');
-
-// // Create a server
-// const server = http.createServer((req, res) => {
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello, World!');
-// });
-
-// // Start the server
-// const port = 3000;
-// server.listen(port, () => {
-//   console.log(`Server running at http://localhost:${port}/`);
-// });
+const express = require('express')
+const app = express()
+app.use((req, res, next) => {
+    res.status(200).json({
+        message: 'It works!'
+    })
+}
+)
 
 console.log('Hello, World!')
+module.exports = app
