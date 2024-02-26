@@ -1,11 +1,8 @@
 const express = require('express')
 const app = express()
-app.use((req, res, next) => {
-    res.status(200).json({
-        message: 'It works!'
-    })
-}
-)
+product_routes= require('./api/routes/products')
 
-console.log('Hello, World!')
+app.use('/products',product_routes) // this is the middleware basically python prefix
+
+console.log('Hello, Wrld!')
 module.exports = app
